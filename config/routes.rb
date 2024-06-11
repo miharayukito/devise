@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get :top, to: "top#index"
   get :mypage, to: "mypage#index"
   
-  resources :users, only: [:index, :show]
+  resources :users, only: [:index, :show, :edit, :update]
   
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

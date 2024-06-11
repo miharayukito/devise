@@ -12,7 +12,13 @@
   <tbody>
   <% User.all.each do |user| %>
       <tr>
-        <td><%= link_to user.name, user_path(user) %></td>
+        <td>
+          <% if user == current_user %>
+            <%= link_to user.name, mypage_path %>
+          <% else %>
+            <%= link_to user.name, user_path(user) %>
+          <% end %>
+        </td>
         <td>：<%= user.email %></td>
       </tr>
   <% end %>

@@ -1,0 +1,20 @@
+<h2>ユーザー編集</h2>
+
+<%= form_for(@user, url: user_path, method: :patch) do |f| %>
+    <div class="field">
+        <%= f.label :名前 %><br />
+        <%= f.text_field :name %>
+    </div>
+
+    <div class="field">
+        <%= f.label :eメール %><br />
+        <%= f.email_field :email %>
+    </div>
+
+    <div class="actions">
+    <%= f.submit '更新' %>
+    </div>
+    <% end %>
+
+<br>
+<%= link_to 'マイページへ', mypage_path %>
