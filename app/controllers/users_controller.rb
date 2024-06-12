@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
   before_action :set_user, only:[:show, :edit, :update]
+    def index
+      @users = User.all
+    end
 
     def show
     end
@@ -21,7 +24,7 @@ class UsersController < ApplicationController
     end
 
     def user_params
-      params.require(:user).permit(:name, :email)
+      params.require(:user).permit(:name, :email, :photo)
     end
   end
   

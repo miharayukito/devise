@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get :mypage, to: "mypage#index"
   
   resources :users, only: [:index, :show, :edit, :update]
+  resources :posts
   
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

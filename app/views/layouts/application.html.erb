@@ -11,6 +11,10 @@
   </head>
 
   <body>
+    <% if user_signed_in? %>
+      <p>ようこそ、<%= link_to current_user.name, mypage_path %>さん</p>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>

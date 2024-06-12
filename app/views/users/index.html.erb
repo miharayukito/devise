@@ -3,26 +3,32 @@
 <table>
   <thead>
     <tr>
+      <th>アイコン</th>
       <th>ユーザー名</th>
       <th>メールアドレス</th>
-      <th colspan="2"></th>
+      <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
-  <% User.all.each do |user| %>
+  <% @users.each do |user| %>
       <tr>
         <td>
+          <% if user.photo.attached? %>
+            <%= image_tag user.thumbnail %>
+          <% end %>
+        </td>
+        <td>:
           <% if user == current_user %>
             <%= link_to user.name, mypage_path %>
           <% else %>
             <%= link_to user.name, user_path(user) %>
           <% end %>
         </td>
-        <td>：<%= user.email %></td>
+        <td>:<%= user.email %></td>
       </tr>
   <% end %>
 </tbody>
 </table>
 <br>
-<%= link_to "トップページへ", top_path %>
+<%= link_to "マイページへ", mypage_path %>

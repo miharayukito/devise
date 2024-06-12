@@ -2,13 +2,18 @@
 
 <%= form_for(@user, url: user_path, method: :patch) do |f| %>
     <div class="field">
-        <%= f.label :名前 %><br />
+        <%= f.label :名前 %><br/>
         <%= f.text_field :name %>
     </div>
 
     <div class="field">
-        <%= f.label :eメール %><br />
+        <%= f.label :eメール %><br/>
         <%= f.email_field :email %>
+    </div>
+
+    <div class="field">
+      <%= f.label :アイコン画像 %><br/>
+      <%= f.file_field :photo %>
     </div>
 
     <div class="actions">
